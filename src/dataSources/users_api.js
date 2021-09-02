@@ -17,6 +17,11 @@ class UsersAPI extends RESTDataSource {
     token = new Object(JSON.parse(JSON.stringify({ refresh: token })));
     return await this.post(`/token/refresh`, token);
   }
+
+  async verifyToken(token) {
+    token = new Object(JSON.parse(JSON.stringify({ token: token })));
+    return await this.post(`/token/verify`, token);
+  }
 }
 
 module.exports = UsersAPI;

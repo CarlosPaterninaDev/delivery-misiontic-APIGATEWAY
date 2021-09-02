@@ -8,7 +8,7 @@ const orderResolver = {
   },
   Mutation: {
     createOrder: (_, { order }, { dataSources, userIdToken }) => {
-      if (order.userIdOrigin == userIdToken)
+      if (order.idUser == userIdToken)
         return dataSources.orderAPI.createOrder(order);
       else return null;
     },

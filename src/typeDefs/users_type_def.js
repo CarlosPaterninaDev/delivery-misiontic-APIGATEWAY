@@ -10,6 +10,10 @@ const usersTypeDefs = gql`
     access: String!
   }
 
+  type User {
+    UserId: String!
+  }
+
   input CredentialsInput {
     username: String!
     password: String!
@@ -18,6 +22,7 @@ const usersTypeDefs = gql`
   extend type Mutation {
     authenticate(credentials: CredentialsInput!): Tokens!
     refreshToken(refresh: String!): Access!
+    verifyToken(token: String!): User!
   }
 `;
 

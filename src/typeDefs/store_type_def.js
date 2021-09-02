@@ -13,7 +13,7 @@ const storeTypeDefs = gql`
   }
 
   type Query {
-    storeById(storeId: String!): [Store]
+    storeById(storeId: String!): Store
   }
 `;
 

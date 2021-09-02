@@ -4,19 +4,24 @@ const orderTypeDefs = gql`
   type Order {
     id: String!
     idUser: String
-    products: [ProductOrder]
+    products: [ListProduct]
     total: Int
     dateOrder: String
   }
 
-  type ProductOrder {
+  type ListProduct {
+    idProduct: String
+    count: Int
+  }
+
+  input ProductOrder {
     idProduct: String
     count: Int
   }
 
   input OrderInput {
     idUser: String
-    products: String
+    products: [ProductOrder]
     total: Int
   }
 
